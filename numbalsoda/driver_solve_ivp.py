@@ -14,7 +14,7 @@ elif platform.uname()[0] == "Linux":
     name = "libsolve_ivp.so"
 else:
     name = "libsolve_ivp.dylib"
-libdop853 = ct.CDLL(rootdir+name)
+libdop853 = ct.CDLL(rootdir+name, winmode=1)
 
 dop853_solve_ivp_wrapper = libdop853.dop853_solve_ivp_wrapper
 dop853_solve_ivp_wrapper.argtypes = [
