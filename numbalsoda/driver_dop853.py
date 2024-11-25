@@ -13,7 +13,7 @@ elif platform.uname()[0] == "Linux":
     name = "libdop853.so"
 else:
     name = "libdop853.dylib"
-libdop853 = ct.CDLL(rootdir+name)
+libdop853 = ct.CDLL(rootdir+name, winmode=1)
 dop853_wrapper = libdop853.dop853_wrapper
 dop853_wrapper.argtypes = [ct.c_void_p, ct.c_int, ct.c_void_p, ct.c_void_p,\
                           ct.c_int, ct.c_void_p, ct.c_void_p, ct.c_double,\
