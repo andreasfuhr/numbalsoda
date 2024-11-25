@@ -18,7 +18,7 @@ elif platform.uname()[0] == "Linux":
     name = "liblsoda.so"
 else:
     name = "liblsoda.dylib"
-liblsoda = ct.CDLL(rootdir+name)
+liblsoda = ct.CDLL(rootdir+name, winmode=1)
 lsoda_wrapper = liblsoda.lsoda_wrapper
 lsoda_wrapper.argtypes = [ct.c_void_p, ct.c_int, ct.c_void_p, ct.c_void_p,
                           ct.c_int, ct.c_void_p, ct.c_void_p, ct.c_double,
